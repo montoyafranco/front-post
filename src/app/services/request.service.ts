@@ -16,9 +16,9 @@ export class RequestService {
   };
 
   bringAllPost()  :Observable<Post[]>{
-    return this.client.get<Post[]>("");
+    return this.client.get<Post[]>("http://localhost:8081/getAllPosts");
   }
   CreaPostAction(command : CreatePostCommand) : Observable<Object>{
-    return this.client.post("",command,this.httpOptions);
+    return this.client.post("http://localhost:8080/create/post",command,this.httpOptions);
   }
 }
