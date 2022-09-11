@@ -9,7 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './components/main/main.component';
 import { SinglePostComponent } from './components/single-post/single-post.component';
 import { SingleCommentComponent } from './components/single-comment/single-comment.component';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { DetailsComponent } from './components/details/details.component'; 
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     MainComponent,
     SinglePostComponent,
-    SingleCommentComponent
+    SingleCommentComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
