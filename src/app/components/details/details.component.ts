@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-details',
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DetailsComponent implements OnInit {
 
   constructor() { }
+  @Input() postSelected? : any
 
   ngOnInit(): void {
   }
