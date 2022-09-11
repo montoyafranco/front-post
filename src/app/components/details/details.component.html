@@ -1,1 +1,11 @@
 <p>details works!</p>
+<p>{{posts?.author}}</p>
+<p>Holaaaaa</p>
+<div *ngIf="posts?.comments">
+    <div *ngFor="let comment of posts?.comments">
+       
+        <app-single-comment [comment]="comment"></app-single-comment>
+
+    </div>
+
+</div>

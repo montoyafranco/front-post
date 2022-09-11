@@ -1,6 +1,8 @@
 
 <h3>Title: {{post?.title}}</h3>
 <p> Author :{{post?.author}}</p>
+<a routerLink="/detail/{{post?.aggregateId}}">Ir a detalles</a>
+<p>id: {{post?.aggregateId}}</p>
 <div *ngIf="post?.comments">
     <div *ngFor="let comment of post?.comments">
        

@@ -29,6 +29,7 @@ export class MainComponent implements OnInit {
     //getallpost .  request esta inicializado en constructor request:RquestService , depndecy injection
     this.request.bringAllPost().subscribe((posts) => {
       this.posts = posts;
+      console.log(posts)
     });
   }
   submitPost() {

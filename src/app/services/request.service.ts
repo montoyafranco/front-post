@@ -10,6 +10,11 @@ import { CreatePostCommand } from './models';
 })
 export class RequestService {
 
+
+
+
+  
+
   constructor(private client:HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -20,5 +25,10 @@ export class RequestService {
   }
   CreaPostAction(command : CreatePostCommand) : Observable<Object>{
     return this.client.post("http://localhost:8080/create/post",command,this.httpOptions);
+  }
+  getPostById  (aggregateId: string) :Observable<Post> {
+    console.log("estoy en service")
+    return this.client.get<Post>(`http://localhost:8081/getAllPostsId/${aggregateId}`);
+    
   }
 }
