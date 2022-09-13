@@ -1,23 +1,27 @@
-<h2>This is the mains section of our app</h2>
+
 
 
 <!-- ACA lo que hace es hacer un mini formulario para nuevo post y cuendo le de click active submit
 post , que submit post toma las variables newTitle y author ya con datos y alli mismo invoca al servicio
 y lo manda a mongo com htttp -->
-<label for="title">Title :</label><br />
-<input name="title" type="text" [(ngModel)]="newTitle" placeholder="Title" />
+<div class="crear_post">
+<h2>Create a Post </h2>
+<label for="title">Title :</label>
+<input name="title" type="text" [(ngModel)]="newTitle" placeholder="Title" /><br />
 
-<label for="author">Author :</label><br />
+<label for="author">Author :</label>
 <input name="author" type="text" [(ngModel)]="newAuthor" placeholder="Author" />
+<br />
 
 <button (click)="submitPost()">Submit</button>
 <!-- Hasta aca -->
 
-
+</div>
 <!-- aca dice que si hay post ya traidos por NgInit los recorra -->
 <div *ngIf="posts">
   <div class="contenedor-post" *ngFor="let post of posts">
-    <a (click) ="closeSocket()" routerLink="/detail/{{post?.aggregateId}}">Ir a detalles</a>
+    <br />
+    <a (click) ="closeSocket()" routerLink="/detail/{{post?.aggregateId}}"><button>Go inside!</button> </a>
     <app-single-post class="holaa" [post]="post"></app-single-post>
   </div>
 </div>

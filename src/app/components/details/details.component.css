@@ -2,10 +2,24 @@
 
 .contenedor-comments{
     border-style: solid 4px red;
-    background-color: aquamarine;
+    background-color: #EDEFF1;
 
 }
 div{
     border-style: solid 4px red;
+
+}
+.create_comment{
+    background-color: #f8f5ea65;
+    border-style:solid   ;
+    border: 1px solid rgb(217, 199, 199);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: flex-start; */
 
 }

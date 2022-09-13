@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+    background-color: #DAE0E6;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+button{
+    background-color: rgba(243, 239, 239, 0.985);
+    border-radius: 6px;
+    color: rgb(26, 25, 25);
+    border-color: white;
+}

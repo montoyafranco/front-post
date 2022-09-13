@@ -1,17 +1,23 @@
 
-<p>{{posts?.author}}</p>
-<p>Holaaaaa</p>
-<!-- Aca estoy tratando de cerrar  -->
 <button type="button" (click)="goBack()">Go back</button>
+<h1>Post Title</h1>
+<p>{{posts?.author}}</p>
 
-<button type="button" (click)="closeSocket()">cerrar socket</button>
-<label for="title">Title :</label><br />
+<!-- Aca estoy tratando de cerrar  -->
+<br />
+<h2> Create a Comment</h2>
+<div class="create_comment">
+
+<!-- <button type="button" (click)="closeSocket()">cerrar socket</button><br /> -->
+<label for="title">Title :</label>
 <input name="author" type="text" [(ngModel)]="author" placeholder="author" />
-
-<label for="author">content :</label><br />
+<br />
+<label for="author">content :</label>
 <input name="content" type="text" [(ngModel)]="content" placeholder="content" />
+<br />
 
 <button (click)="addComment()">Submit</button>
+</div>
 <div class="contenedor-comments" *ngIf="posts?.comments">
     <div *ngFor="let comment of posts?.comments">
        
