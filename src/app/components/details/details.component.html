@@ -1,7 +1,18 @@
-<p>details works!</p>
+
 <p>{{posts?.author}}</p>
 <p>Holaaaaa</p>
-<div *ngIf="posts?.comments">
+<!-- Aca estoy tratando de cerrar  -->
+<button type="button" (click)="goBack()">Go back</button>
+
+<button type="button" (click)="closeSocket()">cerrar socket</button>
+<label for="title">Title :</label><br />
+<input name="author" type="text" [(ngModel)]="author" placeholder="author" />
+
+<label for="author">content :</label><br />
+<input name="content" type="text" [(ngModel)]="content" placeholder="content" />
+
+<button (click)="addComment()">Submit</button>
+<div class="contenedor-comments" *ngIf="posts?.comments">
     <div *ngFor="let comment of posts?.comments">
        
         <app-single-comment [comment]="comment"></app-single-comment>

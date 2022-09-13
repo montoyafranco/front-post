@@ -5,8 +5,9 @@ export type Post = {
     comments : CommentType[]
 }
  export type CommentType = {
-    id : string,
+    
     postId:string,
+    commentId : string,
     author: string,
     content:string
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Post } from './models';
+import { CommentType, Post } from './models';
 import { CreatePostCommand } from './models';
 
 
@@ -30,5 +30,8 @@ export class RequestService {
     console.log("estoy en service")
     return this.client.get<Post>(`http://localhost:8081/getAllPostsId/${aggregateId}`);
     
+  }
+  addCommentToPost(comment : CommentType) : Observable <Object>{
+    return this.client.post(`http://localhost:8080/add/comment`,comment,this.httpOptions)
   }
 }

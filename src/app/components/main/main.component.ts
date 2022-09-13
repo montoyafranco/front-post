@@ -48,6 +48,7 @@ export class MainComponent implements OnInit {
 
     this.newAuthor = '';
   }
+  
   connectToMainSpace() {
     this.socketManager = this.socket.connectAll();
     this.socketManager.subscribe((postNuevo) => {
@@ -55,7 +56,7 @@ export class MainComponent implements OnInit {
       //unshift lo que hace es que lo agrega al inicio del array 
     });
   }
-  closeSocket() {
+    closeSocket() {
     this.socketManager?.complete();
   }
 }

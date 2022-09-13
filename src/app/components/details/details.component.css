@@ -1,2 +1,11 @@
 
 
+.contenedor-comments{
+    border-style: solid 4px red;
+    background-color: aquamarine;
+
+}
+div{
+    border-style: solid 4px red;
+
+}

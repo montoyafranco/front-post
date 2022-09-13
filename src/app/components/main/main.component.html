@@ -16,7 +16,8 @@ y lo manda a mongo com htttp -->
 
 <!-- aca dice que si hay post ya traidos por NgInit los recorra -->
 <div *ngIf="posts">
-  <div *ngFor="let post of posts">
-    <app-single-post [post]="post"></app-single-post>
+  <div class="contenedor-post" *ngFor="let post of posts">
+    <a (click) ="closeSocket()" routerLink="/detail/{{post?.aggregateId}}">Ir a detalles</a>
+    <app-single-post class="holaa" [post]="post"></app-single-post>
   </div>
 </div>
