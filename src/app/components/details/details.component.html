@@ -5,6 +5,15 @@
 
 <!-- Aca estoy tratando de cerrar  -->
 <br />
+
+<div class="contenedor-comments" *ngIf="posts?.comments">
+    <div *ngFor="let comment of posts?.comments">
+       
+        <app-single-comment [comment]="comment"></app-single-comment>
+
+    </div>
+
+</div>
 <h2> Create a Comment</h2>
 <div class="create_comment">
 
@@ -17,12 +26,4 @@
 <br />
 
 <button (click)="addComment()">Submit</button>
-</div>
-<div class="contenedor-comments" *ngIf="posts?.comments">
-    <div *ngFor="let comment of posts?.comments">
-       
-        <app-single-comment [comment]="comment"></app-single-comment>
-
-    </div>
-
 </div>
