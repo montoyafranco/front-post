@@ -21,17 +21,17 @@ export class RequestService {
   };
 
   bringAllPost()  :Observable<Post[]>{
-    return this.client.get<Post[]>("http://localhost:8081/getAllPosts");
+    return this.client.get<Post[]>("https://still-ridge-12719.herokuapp.com/getAllPosts");
   }
   CreaPostAction(command : CreatePostCommand) : Observable<Object>{
-    return this.client.post("http://localhost:8080/create/post",command,this.httpOptions);
+    return this.client.post("https://sheltered-wave-64500.herokuapp.com/create/post",command,this.httpOptions);
   }
   getPostById  (aggregateId: string) :Observable<Post> {
     console.log("estoy en service")
-    return this.client.get<Post>(`http://localhost:8081/getAllPostsId/${aggregateId}`);
+    return this.client.get<Post>(`https://still-ridge-12719.herokuapp.com/getAllPostsId/${aggregateId}`);
     
   }
   addCommentToPost(comment : CommentType) : Observable <Object>{
-    return this.client.post(`http://localhost:8080/add/comment`,comment,this.httpOptions)
+    return this.client.post(`https://sheltered-wave-64500.herokuapp.com/add/comment`,comment,this.httpOptions)
   }
 }
