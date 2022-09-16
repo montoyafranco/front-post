@@ -25,5 +25,5 @@
 <input name="content" type="text" [(ngModel)]="content" placeholder="content" />
 <br />
 
-<button (click)="addComment()">Submit</button>
+<button [disabled]="availableState.token==='' " (click)="addComment()">Submit</button>
 </div>

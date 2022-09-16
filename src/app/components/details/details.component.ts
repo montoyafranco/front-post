@@ -18,6 +18,7 @@ export class DetailsComponent implements OnInit {
 
   author: string = '';
   content: string = '';
+  availableState : any ;
 
   constructor(
     private request: RequestService,
@@ -39,6 +40,7 @@ export class DetailsComponent implements OnInit {
   validateLogin(): boolean {
     let validationResult = false;
     this.state.state.subscribe((currentState) => {
+      this.availableState = currentState;
       if (!currentState.logedIn) {
         this.router.navigateByUrl('login');
         validationResult = false;

@@ -13,7 +13,7 @@ y lo manda a mongo com htttp -->
 <input name="author" type="text" [(ngModel)]="newAuthor" placeholder="Author" />
 <br />
 
-<button (click)="submitPost()">Submit</button>
+<button [disabled]="availableState.token==='' " (click)="submitPost()">Submit</button>
 <!-- Hasta aca -->
 
 </div>

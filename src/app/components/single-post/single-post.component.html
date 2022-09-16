@@ -2,11 +2,11 @@
 <h3>Title: {{post?.title}}</h3>
 <p> Author :{{post?.author}}</p>
 
-<p>id: {{post?.aggregateId}}</p>
+
 <div class="hola" *ngIf="post?.comments">
     <div *ngFor="let comment of post?.comments">
        
-        <app-single-comment [comment]="comment"></app-single-comment>
+        <!-- <app-single-comment [comment]="comment"></app-single-comment> -->
 
     </div>
 

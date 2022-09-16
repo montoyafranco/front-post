@@ -1,21 +1,25 @@
 .contenedor-post{
-    border-style: solid 10px red;
+    
     background-color: #FFFFFF;
+    border: #00ff6d45;
+    border-style: dashed;
+    /* margin: auto; */
+    padding: 30px;
 }
 .holaa{
     background-color: black;
 }
 .crear_post{
-    background-color: #f8f5ea65;
-    border-style:solid   ;
+    background-color: rgba(255, 255, 255, 0.874);
+    border-style: solid;
     border: 1px solid rgb(217, 199, 199);
     border-radius: 10px;
     padding: 10px;
     display: flex;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    width: 50%;
+    margin: auto;
     
 }

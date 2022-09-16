@@ -1,0 +1,19 @@
+.contenedor_google{
+    
+    background-color: #ffffff;
+    /* min-height: 80%; */
+    display: flex;
+    min-height: 600px;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://support.discord.com/hc/user_images/QsCj4_N4Awf1bQ9vNyhtXw.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    
+
+}
