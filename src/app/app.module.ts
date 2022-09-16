@@ -10,7 +10,11 @@ import { MainComponent } from './components/main/main.component';
 import { SinglePostComponent } from './components/single-post/single-post.component';
 import { SingleCommentComponent } from './components/single-comment/single-comment.component';
 import { FormsModule } from '@angular/forms';
-import { DetailsComponent } from './components/details/details.component'; 
+import { DetailsComponent } from './components/details/details.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { LoginComponent } from './components/login/login.component'; 
 
 @NgModule({
   declarations: [
@@ -20,13 +24,16 @@ import { DetailsComponent } from './components/details/details.component';
     MainComponent,
     SinglePostComponent,
     SingleCommentComponent,
-    DetailsComponent
+    DetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]

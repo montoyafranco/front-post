@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { WebSocketSubject } from 'rxjs/webSocket';
 import { RequestService } from 'src/app/services/request.service';
 import { SocketService } from 'src/app/services/socket/socket.service';
 import { CommentType } from 'src/app/services/models';
 import { Location } from '@angular/common';
+import { StateService } from 'src/app/services/state/state.service';
 
 @Component({
   selector: 'app-details',
@@ -22,11 +23,30 @@ export class DetailsComponent implements OnInit {
     private request: RequestService,
     private route: ActivatedRoute,
     private location: Location,
-    private socket: SocketService
+    private socket: SocketService,
+    private router: Router,
+    private state: StateService
   ) {}
 
   ngOnInit(): void {
-    this.getPostById();
+    if(this.validateLogin()){
+      this.getPostById();
+    }
+    
+  }
+  //con esto protejo la ruta xq si entro y no estoy logeado me manda a login
+
+  validateLogin(): boolean {
+    let validationResult = false;
+    this.state.state.subscribe((currentState) => {
+      if (!currentState.logedIn) {
+        this.router.navigateByUrl('login');
+        validationResult = false;
+        return;
+      }
+      validationResult = true;
+    });
+    return validationResult;
   }
 
   getPostById() {
@@ -48,7 +68,7 @@ export class DetailsComponent implements OnInit {
     this.author = '';
     this.content = '';
   }
-  closeSocket(){
+  closeSocket() {
     this.socketManager?.complete;
   }
 
